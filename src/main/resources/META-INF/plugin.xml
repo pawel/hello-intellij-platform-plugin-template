@@ -1,18 +1,47 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.pawel.hellointellijplatformplugintemplate</id>
-    <name>hello-intellij-platform-plugin-template</name>
+    <name>Hello-Jbintellij-Platform-Plug'in-Template</name>
     <vendor>pawel</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.pawel.hellointellijplatformplugintemplate.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.pawel.hellointellijplatformplugintemplate.services.MyProjectService"/>
+        <applicationService
+                serviceImplementation="com.github.pawel.hellointellijplatformplugintemplate.settings.PluginSettingsState"/>
+        <applicationConfigurable
+                parentId="tools"
+                instance="com.github.pawel.hellointellijplatformplugintemplate.settings.PluginSettingsConfigurable"
+                id="com.github.pawel.hellointellijplatformplugintemplate.settings.PluginSettingsConfigurable"
+                displayName="MyPlugin: Application Settings Example"/>
+
     </extensions>
 
-    <applicationListeners>
-        <listener class="com.github.pawel.hellointellijplatformplugintemplate.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
+    <actions>
+        <!--
+                <action id="com.github.pawel.hellointellijplatformplugintemplate.actions.MyAction"
+                        class="com.github.pawel.hellointellijplatformplugintemplate.actions.MyAction"
+                        text="My Test Action"
+                        description="My first intellij platform plugin action">
+                    <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+                    <add-to-group group-id="ToolsMenu" relative-to-action="Stop" anchor="after" />
+                    <override-text place="EditorPopup" use-text-of-place="MainMenu" />
+                    <synonym text="my test action"/>
+                    <synonym text="synonym for search"/>
+
+                    <keyboard-shortcut first-keystroke="control alt G" second-keystroke="C" keymap="$default" />
+                </action>
+        -->
+
+        <action id="com.github.pawel.hellointellijplatformplugintemplate.actions.MyAction"
+                class="com.github.pawel.hellointellijplatformplugintemplate.actions.MyAction"
+                text="MyAction - Hello JetBrains IntelliJ Plugins"
+                description="Plugin action example">
+            <override-text place="MainMenu" text="MyAction - Test"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl G" second-keystroke="ctrl H"/>
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
+
+    </actions>
+
 </idea-plugin>
