@@ -48,6 +48,13 @@
                 description="Replaces selected text with Replacement.">
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
         </action>
+        <action id="com.github.pawel.hellointellijplatformplugintemplate.editor.EditorAreaIllustration"
+                class="com.github.pawel.hellointellijplatformplugintemplate.editor.EditorAreaIllustration"
+                text="Editor Area Illustration"
+                description="Editor area illustration">
+                <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+            <keyboard-shortcut first-keystroke="control alt G" second-keystroke="C" keymap="$default" />
+        </action>
     </actions>
 
 </idea-plugin>
