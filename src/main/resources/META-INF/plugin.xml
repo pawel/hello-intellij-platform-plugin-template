@@ -42,6 +42,12 @@
             <add-to-group group-id="ToolsMenu" anchor="first"/>
         </action>
 
+        <action id="com.github.pawel.hellointellijplatformplugintemplate.editor.EditorIlustrationAction"
+                class="com.github.pawel.hellointellijplatformplugintemplate.editor.EditorIlustrationAction"
+                text="Editor Replace Action"
+                description="Replaces selected text with Replacement.">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
     </actions>
 
 </idea-plugin>
